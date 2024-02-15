@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  backend_service:
+    build: .
+    env_file: .env
+    ports:
+      - '8000:8000'
+
+  postgres_service:
+    image: postgres:alpine
+    ports:
+      - '5432:5432'
+    env_file: .env
